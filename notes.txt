@@ -1,0 +1,53 @@
+pg_ctl -D /usr/local/var/postgres start
+
+pg_ctl -D /usr/local/var/postgres stop
+
+
+psql postgres
+
+brew services start postgresql
+
+brew services stop postgresql
+
+
+###create Users
+
+CREATE USER postgres SUPERUSER;
+
+CREATE ROLE newUser WITH LOGIN PASSWORD 'Bardock123$'
+
+CREATE ROLE postgres WITH LOGIN PASSWORD 'Bardock123$'
+
+ALTER ROLE newUser CREATEDB;
+
+psql -h [local] -p [port number, optional if 5432] -U [newuser] [cars]
+
+# With external URL
+$ pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0-py3-none-any.whl
+$ pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz
+
+# With local file
+$ pip install /Users/you/en_core_web_sm-3.0.0-py3-none-any.whl
+$ pip install /Users/you/en_core_web_sm-3.0.0.tar.gz
+
+python -m spacy download zh_core_web_sm
+
+python -m spacy download zh_core_web_sm
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home
+export JRE_HOME=/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home
+export SPARK_HOME=/usr/local/Cellar/apache-spark/3.1.2/libexec
+export PATH=/usr/local/Cellar/apache-spark/3.1.2/bin:$PATH
+export PYSPARK_PYTHON=/usr/local/bin/python3
+export PYSPARK_DRIVER_PYTHON=jupyter
+export PYSPARK_DRIVER_PYTHON_OPTS='notebook'
+
+/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home
+
+/usr/local/Cellar/apache-spark/3.1.2/libexec    
+
+import pyspark
+from pyspark import SparkContext
+sc = SparkContext()
+n = sc.parallelize([4,10,9,7])
+n.take(3)
